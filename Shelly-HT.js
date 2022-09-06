@@ -3,15 +3,16 @@ Module.register("Shelly-HT",{
 	defaults: {
 		//Just a mock API I used for development
 		ShellyHTApiPath: "http://www.mocky.io/v2/5e9999183300003e267b2744",
-		RefreshInterval: 3000,
+		RefreshInterval: 30000,
 		displayUpdated: true,
 		horizontalView: true
 	},
 	//After startup, we don't have data and might not have it for a long time, until Shelly HT wakes up.
 	ShellyHTData: {
 		tmp: "--",
-		hum: "--",
-		bat: "--",
+		apower: "--",
+		// hum: "--",
+		// bat: "--",
 		updated: "--"
 	},
 	getStyles: function () {
@@ -24,7 +25,6 @@ Module.register("Shelly-HT",{
 		setInterval(function() {
 			self.sendSocketNotification("GetShelly", self.config.ShellyHTApiPath);
 			self.updateDom();
-			//TODO: make the refresh interval configurable. Every 3 secs seems like an overkill
 		}, this.config.RefreshInterval);
 
 	},
@@ -32,28 +32,31 @@ Module.register("Shelly-HT",{
 		if (notification = "ShellyHTData"){
 			//Log.log(this.name + " received a socket notification: " + notification + " - Temp: " + payload.tmp + " Hum: " + payload.hum + "Updated: " + payload.updated);
 			this.ShellyHTData.tmp = payload.tmp
-			this.ShellyHTData.hum = payload.hum
-			this.ShellyHTData.bat = payload.bat
+			// this.ShellyHTData.hum = payload.hum
+			// this.ShellyHTData.bat = payload.bat
+			this.ShellyHTData.apower = payload.apower
 			this.ShellyHTData.updated = payload.updated
 		}
 	},
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		var tmp = this.translate("TEMPERATURE");
-		var hum = this.translate("HUMIDITY");
-		var bat = this.translate("BATTERY", {"bat": this.ShellyHTData.bat})
+		var apower = this.translate("APOWER")
+
+		// var hum = this.translate("HUMIDITY");
+		// var bat = this.translate("BATTERY", {"bat": this.ShellyHTData.bat})
+		var tmp = this.translate("TEMPERATURE", {"tmp": this.ShellyHTData.tmp});
 		var updated = this.translate("UPDATED", {"upd": this.ShellyHTData.updated})
 		ihtml =  "<div class='container'>"
 		if (this.config.horizontalView) {
-			ihtml += "  <div class='right'><sup>" + hum + "</sup> " + this.ShellyHTData.hum + " %</div>"
-			ihtml += "  <div class='right'><sup>" + tmp + "</sup> " + this.ShellyHTData.tmp + " ℃</div>"
+			ihtml += "  <div class='right'><sup>" + apower + "</sup> " + this.ShellyHTData.apower + " Watt</div>"
+			// ihtml += "  <div class='right'><sup>" + tmp + "</sup> " + this.ShellyHTData.tmp + " ℃</div>"
 		} else {
-			ihtml += "  <div class='newline'><sup>" + hum + "</sup>" + this.ShellyHTData.hum + " %</div>"
-			ihtml += "  <div class='newline'><sup>" + tmp + "</sup>" + this.ShellyHTData.tmp + " ℃</div>"
+			ihtml += "  <div class='newline'><sup>" + apower + "</sup>" + this.ShellyHTData.apower + " Watt</div>"
+			// ihtml += "  <div class='newline'><sup>" + tmp + "</sup>" + this.ShellyHTData.tmp + " ℃</div>"
 		}
 		if (this.config.displayUpdated){
-			ihtml += "  <p class='bottom'>" + bat + " " +  updated + "</p>"
+			ihtml += "  <p class='bottom'>" + tmp + " ℃ " + updated + "</p>"
 		}
 		ihtml += "</div>"
 		wrapper.innerHTML = ihtml
@@ -62,7 +65,8 @@ Module.register("Shelly-HT",{
 	getTranslations: function() {
         return  {
 			nl:	'translations/nl.json',
-			en: 'translations/en.json'
+			en: 'translations/en.json',
+			de: 'translations/de.json',
 		};
 	}
 });

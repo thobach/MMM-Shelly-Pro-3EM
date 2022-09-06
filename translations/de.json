@@ -1,0 +1,5 @@
+{
+	"APOWER": "Leistung",
+    "TEMPERATURE": "Temperatur: {tmp}",
+    "UPDATED": "Stand: {upd}"
+}

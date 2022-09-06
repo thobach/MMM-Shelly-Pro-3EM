@@ -1,0 +1,59 @@
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"switch:0": {
+		"id": 0,
+		"source": "init",
+		"output": true,
+		"apower": 33.4,
+		"voltage": 236.0,
+		"current": 0.215,
+		"aenergy": {
+			"total": 32686.064,
+			"by_minute": [
+				74.427,
+				549.651,
+				532.051
+			],
+			"minute_ts": 1662015127
+		},
+		"temperature": {
+			"tC": 51.4,
+			"tF": 124.6
+		}
+	},
+	"sys": {
+		"mac": "3C610579B5B0",
+		"restart_required": false,
+		"time": "08:52",
+		"unixtime": 1662015130,
+		"uptime": 43624,
+		"ram_size": 235208,
+		"ram_free": 159028,
+		"fs_size": 458752,
+		"fs_free": 163840,
+		"cfg_rev": 7,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"available_updates": {}
+	},
+	"wifi": {
+		"sta_ip": "192.168.50.80",
+		"status": "got ip",
+		"ssid": "Rudini",
+		"rssi": -83
+	},
+	"ws": {
+		"connected": false
+	}
+}
