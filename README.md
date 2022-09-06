@@ -4,7 +4,7 @@
 
 This is a simple MagicMirror module to display ONE Shelly PM sensor data (temperature and power) on Magic Mirror.
 
-Feel free to extend to fulfill your own needs, This fulfills my needs.
+Feel free to extend to fulfill your own needs, This fulfills my needs. See the configuration and some pictures [here](https://github.com/stefanjacobs/MagicMirror).
 
 The module uses the Shelly HT API over LAN to get the sensor data. For details, [check here](https://shelly-api-docs.shelly.cloud/).
 For it to work properly, it's best to have a static IP for your Shelly. Since it's using LAN connection, no authentication is needed towards the API.
@@ -28,6 +28,6 @@ cd modules
 git clone https://github.com/stefanjacobs/MMM-Shelly-PM
 ```
 
-check out the config.sample.js in the module directory. Copy the content to your config.js and change as necessary. You have to change ShellyApiPath to your device's IP address.
+Check out the config.sample.js in the module directory. Copy the content to your config.js and change as necessary. You have to change ShellyApiPath to your device's IP address.
 
 Restart MagicMirror and enjoy.
