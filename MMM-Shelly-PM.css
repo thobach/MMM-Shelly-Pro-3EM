@@ -1,10 +1,10 @@
-﻿.Shelly-HT div.container {
+﻿.MMM-Shelly-PM div.container {
     margin: 0px;
     padding: 0px;
 }
 
 
-.Shelly-HT p.bottom {
+.MMM-Shelly-PM p.bottom {
     margin: 0px;
     padding: 0px;
     font-size: 40%;
@@ -13,17 +13,17 @@
     clear:right;
 }
 
-.Shelly-HT div.right {
+.MMM-Shelly-PM div.right {
     float: right;
     padding-left:10px;
 }
 
-.Shelly-HT div.newline {
+.MMM-Shelly-PM div.newline {
     padding-left:10px;
     clear: right;
 }
 
-.Shelly-HT div sup {
+.MMM-Shelly-PM div sup {
     vertical-align: super;
     font-size: 40%;
     padding-right: 10px;

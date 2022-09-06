@@ -28,8 +28,7 @@ module.exports = NodeHelper.create({
 				}
 				//console.log("Sending Shelly data to FE module", payload);
 
-				//Only sending back temperature in Celsius and Humidity %.
-				self.sendSocketNotification('ShellyHTData', payload)
+				self.sendSocketNotification('ShellyPDData', payload)
 			});
 		}
 	}

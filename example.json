@@ -48,9 +48,9 @@
 		"available_updates": {}
 	},
 	"wifi": {
-		"sta_ip": "192.168.50.80",
+		"sta_ip": "192.168.0.149",
 		"status": "got ip",
-		"ssid": "Rudini",
+		"ssid": "SSID",
 		"rssi": -83
 	},
 	"ws": {
