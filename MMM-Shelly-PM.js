@@ -50,7 +50,7 @@ Module.register("MMM-Shelly-PM",{
 		if (this.config.displayUpdated){
 			ihtml += "  <p class='bottom'>" + tmp + " ℃ " + updated + "</p>"
 		}
-		ihtml += "</div>"
+		ihtml += "</div><div class='newline'></div>"
 		wrapper.innerHTML = ihtml
 		return wrapper
 	},
