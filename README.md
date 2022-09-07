@@ -20,6 +20,23 @@ Feel free to enhance :)
 - You need to have a MagicMirror up and running, also a [Shelly PM sensor](https://shelly.cloud/) with a fixed IP.
 - If you want a language other than `en` or `de` please add it under translations.
 
+## Configuration
+
+Include this (or multiple instances of it) in your config.js file:
+
+```json
+{
+    module: "MMM-Shelly-PM",
+    header: "Shelly-PM",
+    position: "top_left",
+    config: {
+        //Your Shelly PM needs to have a fixed IP (or your LAN must be supporting mDNS)
+        ShellyApiPath: "http://192.168.0.149/rpc/Shelly.GetStatus",
+        RefreshInterval: "5000" //milliseconds
+    }
+}
+```
+
 ## Installing
 
 Go to your MagicMirror directory
@@ -32,7 +49,3 @@ git clone https://github.com/stefanjacobs/MMM-Shelly-PM
 Check out the config.sample.js in the module directory. Copy the content to your config.js and change as necessary. You have to change ShellyApiPath to your device's IP address.
 
 Restart MagicMirror and enjoy.
-
-## TODO
-
-  [ ] Add a list of shelly-pms

@@ -4,7 +4,7 @@
     header: "Shelly-PM",
     position: "top_left",
     config: {
-        //Your Shelly HT needs to have a fixed IP (or your LAN must be supporting mDNS)
+        //Your Shelly PM needs to have a fixed IP (or your LAN must be supporting mDNS)
         ShellyApiPath: "http://192.168.0.149/rpc/Shelly.GetStatus",
         RefreshInterval: "5000" //milliseconds
     }
