@@ -1,4 +1,4 @@
-# Shelly-HT
+# Shelly-PM
 
 ## Description
 
@@ -17,7 +17,8 @@ Feel free to enhance :)
 
 ## Prerequisites
 
-You need to have a MagicMirror up and running, also a [Shelly PM sensor](https://shelly.cloud/) with a fixed IP.
+- You need to have a MagicMirror up and running, also a [Shelly PM sensor](https://shelly.cloud/) with a fixed IP.
+- If you want a language other than `en` or `de` please add it under translations.
 
 ## Installing
 
@@ -31,3 +32,7 @@ git clone https://github.com/stefanjacobs/MMM-Shelly-PM
 Check out the config.sample.js in the module directory. Copy the content to your config.js and change as necessary. You have to change ShellyApiPath to your device's IP address.
 
 Restart MagicMirror and enjoy.
+
+## TODO
+
+  [ ] Add a list of shelly-pms

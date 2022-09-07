@@ -38,13 +38,14 @@ Module.register("MMM-Shelly-PM",{
 	getDom: function() {
 		var wrapper = document.createElement("div");
 		var apower = this.translate("APOWER")
+		var apower_unit = this.translate("APOWER_UNIT", {"apower": this.ShellyPDData.apower});
 		var tmp = this.translate("TEMPERATURE", {"tmp": this.ShellyPDData.tmp});
 		var updated = this.translate("UPDATED", {"upd": this.ShellyPDData.updated})
 		ihtml =  "<div class='container'>"
 		if (this.config.horizontalView) {
-			ihtml += "  <div class='right'><sup>" + apower + "</sup> " + this.ShellyPDData.apower + " Watt</div>"
+			ihtml += "  <div class='right'><sup>" + apower + "</sup> " + apower_unit + "</div>"
 		} else {
-			ihtml += "  <div class='newline'><sup>" + apower + "</sup>" + this.ShellyPDData.apower + " Watt</div>"
+			ihtml += "  <div class='newline'><sup>" + apower + "</sup>" + apower_unit + "</div>"
 		}
 		if (this.config.displayUpdated){
 			ihtml += "  <p class='bottom'>" + tmp + " ℃ " + updated + "</p>"

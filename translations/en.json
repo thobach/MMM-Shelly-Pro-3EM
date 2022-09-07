@@ -1,5 +1,6 @@
 {
     "TEMPERATURE": "Temperature",
+	"APOWER_UNIT": "{apower} watt",
     "APOWER": "Power",
     "UPDATED": "updated: {upd}"
 }
