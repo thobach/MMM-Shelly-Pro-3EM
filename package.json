@@ -1,0 +1,23 @@
+{
+	"name": "mmm-shelly-pm",
+	"version": "1.0.0",
+	"description": "bla",
+	"main": "MMM-Shelly-PM.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/stefanjacobs/MMM-Shelly-PM"
+	},
+	"author": "",
+	"license": "UNLICENSE",
+	"bugs": {
+		"url": "https://github.com/stefanjacobs/MMM-Shelly-PM/issues"
+	},
+	"homepage": "https://github.com/stefanjacobs/MMM-Shelly-PM#readme",
+	"dependencies": {
+		"request": "^2.78.0"
+	},
+	"devDependencies": {}
+}

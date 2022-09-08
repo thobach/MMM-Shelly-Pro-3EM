@@ -29,3 +29,10 @@
     padding-right: 10px;
 }
 
+.MMM-Shelly-PM .generation {
+	color: lightgreen;
+}
+
+.MMM-Shelly-PM .consumption {
+  color: rgb(214, 122, 127);
+}

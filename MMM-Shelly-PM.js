@@ -5,7 +5,8 @@ Module.register("MMM-Shelly-PM",{
 		ShellyApiPath: "http://www.mocky.io/v2/5e9999183300003e267b2744",
 		RefreshInterval: 30000,
 		displayUpdated: true,
-		horizontalView: true
+		horizontalView: true,
+		negativeDisplay: false
 	},
 	// Initialize data after startup
 	ShellyPDData: {
@@ -38,14 +39,20 @@ Module.register("MMM-Shelly-PM",{
 	getDom: function() {
 		var wrapper = document.createElement("div");
 		var apower = this.translate("APOWER")
-		var apower_unit = this.translate("APOWER_UNIT", {"apower": this.ShellyPDData.apower});
+		if (this.config.negativeDisplay && this.ShellyPDData.apower > 0.4) {
+			var apower_unit = this.translate("APOWER_UNIT", {"apower": -this.ShellyPDData.apower});
+			var csstype = "generation"
+		} else {
+			var apower_unit = this.translate("APOWER_UNIT", {"apower": this.ShellyPDData.apower});
+			var csstype = "consumption"
+		}
 		var tmp = this.translate("TEMPERATURE", {"tmp": this.ShellyPDData.tmp});
 		var updated = this.translate("UPDATED", {"upd": this.ShellyPDData.updated})
 		ihtml =  "<div class='container'>"
 		if (this.config.horizontalView) {
-			ihtml += "  <div class='right'><sup>" + apower + "</sup> " + apower_unit + "</div>"
+			ihtml += "  <div class='right " + csstype + "'><sup>" + apower + "</sup> " + apower_unit + "</div>"
 		} else {
-			ihtml += "  <div class='newline'><sup>" + apower + "</sup>" + apower_unit + "</div>"
+			ihtml += "  <div class='newline " + csstype + "'><sup>" + apower + "</sup>" + apower_unit + "</div>"
 		}
 		if (this.config.displayUpdated){
 			ihtml += "  <p class='bottom'>" + tmp + " ℃ " + updated + "</p>"
