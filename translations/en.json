@@ -1,6 +1,7 @@
 {
     "TEMPERATURE": "Temperature",
 	"APOWER_UNIT": "{apower} watt",
+	"TOTALDAY_UNIT": "{apower} kwh",
     "APOWER": "Power",
     "UPDATED": "updated: {upd}"
 }

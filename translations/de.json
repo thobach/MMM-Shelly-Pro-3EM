@@ -2,6 +2,7 @@
 	"APOWER": "Leistung",
 	"TOTALDAY": "Heute",
 	"APOWER_UNIT": "{apower} Watt",
+	"TOTALDAY_UNIT": "{apower} kWh",
     "TEMPERATURE": "Temperatur: {tmp}",
     "UPDATED": "Stand: {upd}"
 }

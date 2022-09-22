@@ -23,17 +23,25 @@ Module.register("MMM-Shelly-PM",{
 
 		// Schedule update timer.
 		setInterval(function() {
-			self.sendSocketNotification("GetShelly", self.config.ShellyApiPath);
+			var payload = {
+				uri: self.config.ShellyApiPath
+			}
+			self.sendSocketNotification("GetShelly", payload);
 			self.updateDom();
 		}, this.config.RefreshIntervalLAN);
 
 		setInterval(function() {
-			self.sendSocketNotification("GetShellyCloud", self.config.CloudServerPath);
+			var payload = {
+				uri: self.config.cloudServerPath,
+				deviceId: self.config.deviceId,
+				authKey: self.config.authKey
+			}
+			self.sendSocketNotification("GetShellyCloud", payload);
 			self.updateDom();
 		}, this.config.RefreshIntervalCloud);
 		// update initial data
 		// self.sendSocketNotification("GetShelly");
-		self.sendSocketNotification("GetShellyCloud");
+		// self.sendSocketNotification("GetShellyCloud");
 	},
 	socketNotificationReceived: function (notification, payload) {
 		if (notification = "ShellyPDData"){
@@ -60,10 +68,10 @@ Module.register("MMM-Shelly-PM",{
 		}
 
 		if (this.config.negativeDisplay && this.ShellyPDData.total > 0.4) {
-			var total_unit = this.translate("APOWER_UNIT", {"apower": -this.ShellyPDData.total})
+			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": -this.ShellyPDData.total})
 			var totalcsstype = "generation"
 		} else {
-			var total_unit = this.translate("APOWER_UNIT", {"apower": this.ShellyPDData.total})
+			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": this.ShellyPDData.total})
 			var totalcsstype = "consumption"
 		}
 
