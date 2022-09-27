@@ -19,6 +19,7 @@ Feel free to enhance :)
 
 - You need to have a MagicMirror up and running, also a [Shelly PM sensor](https://shelly.cloud/) with a fixed IP.
 - If you want a language other than `en` or `de` please add it under translations.
+- If you want consumption data for a day, enable shelly cloud and add the correct server path, device ID and authorization key to the configuration.
 
 ## Configuration
 
@@ -33,6 +34,12 @@ Include this (or multiple instances of it) in your config.js file:
         //Your Shelly PM needs to have a fixed IP (or your LAN must be supporting mDNS)
         ShellyApiPath: "http://192.168.0.149/rpc/Shelly.GetStatus",
         RefreshInterval: "5000" //milliseconds
+        negativeDisplay: true,
+
+        cloudServerPath: "https://shelly-XX-eu.shelly.cloud/statistics/relay/consumption",
+        deviceId: "3c6XXXXXX",
+        authKey: "XXXXX",
+        RefreshIntervalCloud: "60000" //milliseconds, here 1 minute
     }
 }
 ```

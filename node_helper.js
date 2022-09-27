@@ -54,6 +54,7 @@ module.exports = NodeHelper.create({
 		}
 
 		if (notification == "GetShellyCloud") {
+			// siehe https://www.shelly-support.eu/forum/index.php?thread/10983-cloud-api-abfrage-consumption/&pageNo=2
             var dataString = 'channel=0&date_range=day&date=' + cloud_date + '&id=' + payload.deviceId + '&auth_key=' + payload.authKey
 			const options = {
 				uri: payload.uri,

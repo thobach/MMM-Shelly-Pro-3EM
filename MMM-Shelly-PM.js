@@ -67,7 +67,7 @@ Module.register("MMM-Shelly-PM",{
 			var csstype = "consumption"
 		}
 
-		if (this.config.negativeDisplay && this.ShellyPDData.total > 0.4) {
+		if (this.config.negativeDisplay && this.ShellyPDData.total > 0.004) {
 			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": -this.ShellyPDData.total})
 			var totalcsstype = "generation"
 		} else {
@@ -86,7 +86,7 @@ Module.register("MMM-Shelly-PM",{
 			ihtml += "  <div class='newline " + totalcsstype + "'><sup>" + totalday + "</sup> " + total_unit + "</div>"
 		}
 		if (this.config.displayUpdated){
-			ihtml += "  <p class='bottom'>" + tmp + " ℃ " + updated + "</p>"
+			ihtml += "  <p class='bottom'>" + tmp + "°C " + updated + "</p>"
 		}
 		ihtml += "</div><div class='newline'></div>"
 		wrapper.innerHTML = ihtml
