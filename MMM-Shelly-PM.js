@@ -2,8 +2,6 @@ Module.register("MMM-Shelly-PM",{
 	// Default module config.
 	defaults: {
 		//Just a mock API I used for development
-		ShellyApiPath: "http://www.mocky.io/v2/5e9999183300003e267b2744",
-		RefreshInterval: 30000,
 		displayUpdated: true,
 		horizontalView: true,
 		negativeDisplay: false
@@ -24,11 +22,11 @@ Module.register("MMM-Shelly-PM",{
 		// Schedule update timer.
 		setInterval(function() {
 			var payload = {
-				uri: self.config.ShellyApiPath
+				uri: self.config.uri
 			}
 			self.sendSocketNotification("GetShelly", payload);
 			self.updateDom();
-		}, this.config.RefreshIntervalLAN);
+		}, this.config.refreshIntervalLAN);
 
 		setInterval(function() {
 			var payload = {
@@ -38,13 +36,13 @@ Module.register("MMM-Shelly-PM",{
 			}
 			self.sendSocketNotification("GetShellyCloud", payload);
 			self.updateDom();
-		}, this.config.RefreshIntervalCloud);
+		}, this.config.refreshIntervalCloud);
 		// update initial data
 		// self.sendSocketNotification("GetShelly");
 		// self.sendSocketNotification("GetShellyCloud");
 	},
 	socketNotificationReceived: function (notification, payload) {
-		if (notification = "ShellyPDData"){
+		if (notification == "ShellyPDData"){
 			// Log.log(this.name + " received a socket notification: " + notification + " - Temp: " + payload.tmp + " Hum: " + payload.hum + "Updated: " + payload.updated);
 			this.ShellyPDData.tmp = payload.tmp
 			this.ShellyPDData.apower = payload.apower
@@ -54,7 +52,7 @@ Module.register("MMM-Shelly-PM",{
 				this.sendNotification("MMM-EnergyMonitor_SOLAR_POWER_UPDATE", payload.apower);
 			}
 		}
-		if (notification = "ShellyCloudData") {
+		if (notification == "ShellyCloudData") {
 			this.ShellyPDData.total = payload.total
 		}
 	},

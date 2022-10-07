@@ -4,13 +4,6 @@ const request = require('request');
 
 module.exports = NodeHelper.create({
 
-	oldData: {
-        tmp: "--",
-		apower: "--",
-		updated: "--",
-		total: "--"
-	},
-
 	start: function() {
 
 	},
@@ -41,14 +34,8 @@ module.exports = NodeHelper.create({
 					apower: body['switch:0'].apower,
 					tmp: body['switch:0'].temperature.tC,
 					updated: printed_date,
-					total: self.oldData.total
 				}
 				//console.log("Sending Shelly data to FE module", payload);
-				self.oldData.apower = payload.apower;
-				self.oldData.tmp = payload.tmp;
-				self.oldData.updated = payload.updated;
-				self.oldData.total = payload.total;
-
 				self.sendSocketNotification('ShellyPDData', payload);
 			});
 		}
@@ -89,15 +76,8 @@ module.exports = NodeHelper.create({
 				})
 
                 payload= {
-					apower: self.oldData.apower,
-                    tmp: self.oldData.tmp,
-                    updated: self.oldData.updated,
                     total: (power/1000).toFixed(3)
                 }
-				self.oldData.apower = payload.apower;
-				self.oldData.tmp = payload.tmp;
-				self.oldData.updated = payload.updated;
-				self.oldData.total = payload.total;
 				self.sendSocketNotification('ShellyCloudData', payload)
 			})
 		}
