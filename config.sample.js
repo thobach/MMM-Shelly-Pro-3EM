@@ -12,6 +12,8 @@
 		cloudServerPath: "https://shelly-XX-eu.shelly.cloud/statistics/relay/consumption",
 		deviceId: "3c6XXXXXX",
 		authKey: "XXXXX",
-		RefreshIntervalCloud: "60000" //milliseconds, here 1 minute
+		RefreshIntervalCloud: "60000", //milliseconds, here 1 minute
+
+		broadcastToEnergyMonitor: true,
     }
 }
