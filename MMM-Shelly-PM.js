@@ -52,7 +52,6 @@ Module.register("MMM-Shelly-PM",{
 			this.ShellyPDData.tmp = payload.tmp
 			this.ShellyPDData.apower = payload.apower
 			this.ShellyPDData.updated = payload.updated
-			this.sendNotification("MMM-EnergyMonitor_SOLAR_POWER_UPDATE", payload.apower);
 		}
 		if (notification == "ShellyCloudData") {
 			this.ShellyPDData.total = payload.total
