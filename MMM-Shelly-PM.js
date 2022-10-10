@@ -19,8 +19,13 @@ Module.register("MMM-Shelly-PM",{
 	start: function() {
 		var self = this;
 
+		function setIntervalImmediately(func, interval) {
+			func();
+			return setInterval(func, interval);
+		}
+
 		// Schedule update timer.
-		setInterval(function() {
+		setIntervalImmediately(function() {
 			var payload = {
 				uri: self.config.uri
 			}
@@ -28,7 +33,7 @@ Module.register("MMM-Shelly-PM",{
 			self.updateDom();
 		}, this.config.refreshIntervalLAN);
 
-		setInterval(function() {
+		setIntervalImmediately(function() {
 			var payload = {
 				uri: self.config.cloudServerPath,
 				deviceId: self.config.deviceId,
@@ -38,7 +43,7 @@ Module.register("MMM-Shelly-PM",{
 			self.updateDom();
 		}, this.config.refreshIntervalCloud);
 		// update initial data
-		// self.sendSocketNotification("GetShelly");
+		self.sendSocketNotification("GetShelly");
 		// self.sendSocketNotification("GetShellyCloud");
 	},
 	socketNotificationReceived: function (notification, payload) {
@@ -47,10 +52,7 @@ Module.register("MMM-Shelly-PM",{
 			this.ShellyPDData.tmp = payload.tmp
 			this.ShellyPDData.apower = payload.apower
 			this.ShellyPDData.updated = payload.updated
-
-			if (this.config.broadcastToEnergyMonitor) {
-				this.sendNotification("MMM-EnergyMonitor_SOLAR_POWER_UPDATE", payload.apower);
-			}
+			this.sendNotification("MMM-EnergyMonitor_SOLAR_POWER_UPDATE", payload.apower);
 		}
 		if (notification == "ShellyCloudData") {
 			this.ShellyPDData.total = payload.total

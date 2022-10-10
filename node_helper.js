@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
 
 		if (notification == "GetShelly"){
 			//Parameters: notification can be anything (not used), payload must be the URL of the Shelly PM status api
-			request(payload.uri, {json: true, forever: true, timeout: 2500 }, (err, res, body) => {
+			request(payload.uri, {json: true, timeout: 2500 }, (err, res, body) => {
 				if (err) { return console.log(err); }
 
 				payload= {
