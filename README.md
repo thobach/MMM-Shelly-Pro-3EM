@@ -30,7 +30,7 @@ Include this (or multiple instances of it) in your config.js file inside the `mo
     config: {
         // replace <local-ip-of-shelly-pro-3em> with the local (fixed) IP of your Shelly Pro 3EM
         shellyURLAndPath: "http://<local-ip-of-shelly-pro-3em>/rpc/Shelly.GetStatus",
-        refreshInterval: "5000" // in milliseconds
+        refreshInterval: "5000", // in milliseconds
         negativeDisplay: true, // default: false, if set to true and you are generating more energy than you use, show values in green without negative sign
         horizontalView: true, // default: true, if set to true displays values next to each other, otherwise below each other
         displayUpdated: true // default: true, if set to true display the time incl. seconds when the data was last received
