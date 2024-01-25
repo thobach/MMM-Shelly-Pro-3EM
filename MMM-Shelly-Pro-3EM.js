@@ -63,7 +63,7 @@ Module.register("MMM-Shelly-Pro-3EM",{
 		ihtml =  "<div class='container'>"
 		if (this.config.horizontalView) {
 			ihtml += "  <div class='right " + csstype + "'><sup>" + apower + "</sup> " + apower_unit + "</div>"
-			ihtml += "  <div class='newline right " + totalcsstype + "'><sup>" + totalday + "</sup> " + total_unit + "</div>"
+			ihtml += "  <div class='right " + totalcsstype + "'><sup>" + totalday + "</sup> " + total_unit + "</div>"
 		} else {
 			ihtml += "  <div class='newline " + csstype + "'><sup>" + apower + "</sup>" + apower_unit + "</div>"
 			ihtml += "  <div class='newline " + totalcsstype + "'><sup>" + totalday + "</sup> " + total_unit + "</div>"
