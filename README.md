@@ -22,7 +22,7 @@ For it to work properly, it's best to have a static IP for your Shelly.
 
 Include this (or multiple instances of it) in your config.js file inside the `modules` array:
 
-```json
+```
 {
     module: "MMM-Shelly-Pro-3EM",
     header: "Energy Consumption",
