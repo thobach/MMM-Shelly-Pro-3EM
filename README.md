@@ -44,7 +44,7 @@ Go to your MagicMirror directory
 
 ```bash
 cd modules
-git clone https://github.com/stefanjacobs/MMM-Shelly-Pro-3EM
+git clone https://github.com/thobach/MMM-Shelly-Pro-3EM
 cd MMM-Shelly-Pro-3EM
 npm install
 ```
