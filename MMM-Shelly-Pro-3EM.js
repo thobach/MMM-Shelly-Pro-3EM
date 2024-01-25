@@ -43,7 +43,7 @@ Module.register("MMM-Shelly-Pro-3EM",{
 		var wrapper = document.createElement("div");
 		var apower = this.translate("APOWER");
 		var totalday = this.translate("TOTALDAY");
-		if (this.config.negativeDisplay && this.shellyData.apower > 0) {
+		if (this.config.negativeDisplay && this.shellyData.apower < 0) {
 			var apower_unit = this.translate("APOWER_UNIT", {"apower": -Math.round(this.shellyData.apower)});
 			var csstype = "generation"
 		} else {
@@ -51,7 +51,7 @@ Module.register("MMM-Shelly-Pro-3EM",{
 			var csstype = "consumption"
 		}
 
-		if (this.config.negativeDisplay && this.shellyData.total > 0) {
+		if (this.config.negativeDisplay && this.shellyData.total < 0) {
 			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": -Math.round(this.shellyData.total)})
 			var totalcsstype = "generation"
 		} else {
