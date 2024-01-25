@@ -1,10 +1,10 @@
-﻿.MMM-Shelly-PM div.container {
+﻿.MMM-Shelly-Pro-3EM div.container {
     margin: 0px;
     padding: 0px;
 }
 
 
-.MMM-Shelly-PM p.bottom {
+.MMM-Shelly-Pro-3EM p.bottom {
     margin: 0px;
     padding: 0px;
     font-size: 40%;
@@ -13,26 +13,26 @@
     clear:right;
 }
 
-.MMM-Shelly-PM div.right {
+.MMM-Shelly-Pro-3EM div.right {
     float: right;
     padding-left:10px;
 }
 
-.MMM-Shelly-PM div.newline {
+.MMM-Shelly-Pro-3EM div.newline {
     padding-left:10px;
     clear: right;
 }
 
-.MMM-Shelly-PM div sup {
+.MMM-Shelly-Pro-3EM div sup {
     vertical-align: super;
     font-size: 40%;
     padding-right: 10px;
 }
 
-.MMM-Shelly-PM .generation {
+.MMM-Shelly-Pro-3EM .generation {
 	color: lightgreen;
 }
 
-.MMM-Shelly-PM .consumption {
+.MMM-Shelly-Pro-3EM .consumption {
   color: rgb(214, 122, 127);
 }
