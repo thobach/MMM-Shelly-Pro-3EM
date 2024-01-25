@@ -1,21 +1,21 @@
 {
-	"name": "mmm-shelly-pm",
+	"name": "mmm-shelly-pro-3em",
 	"version": "1.0.0",
-	"description": "bla",
-	"main": "MMM-Shelly-PM.js",
+	"description": "Magic Mirror module to display current and today's energy consumption measured by a Shelly Pro 3EM device",
+	"main": "MMM-Shelly-Pro-3EM.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/stefanjacobs/MMM-Shelly-PM"
+		"url": "git+https://github.com/thobach/MMM-Shelly-Pro-3EM"
 	},
 	"author": "",
 	"license": "UNLICENSE",
 	"bugs": {
-		"url": "https://github.com/stefanjacobs/MMM-Shelly-PM/issues"
+		"url": "https://github.com/thobach/MMM-Shelly-Pro-3EM/issues"
 	},
-	"homepage": "https://github.com/stefanjacobs/MMM-Shelly-PM#readme",
+	"homepage": "https://github.com/thobach/MMM-Shelly-Pro-3EM#readme",
 	"dependencies": {
 		"request": "^2.78.0"
 	},
