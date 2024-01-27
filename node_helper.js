@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
 				if (err) { return console.log(err); }
 				payload= {
 					apower: body['em:0'].total_act_power,
-					apowertoday: body['emdata:0'].total_act,
+					apowertoday: body['em:0'].total_current,
 					updated: printed_date,
 				}
 				self.sendSocketNotification('ShellyData', payload);
