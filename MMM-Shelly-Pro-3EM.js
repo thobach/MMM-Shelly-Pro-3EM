@@ -52,10 +52,10 @@ Module.register("MMM-Shelly-Pro-3EM",{
 		}
 
 		if (this.config.negativeDisplay && this.shellyData.total < 0) {
-			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": -Math.round(this.shellyData.total)})
+			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": -Math.round(this.shellyData.total*100)/100})
 			var totalcsstype = "generation"
 		} else {
-			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": Math.round(this.shellyData.total)})
+			var total_unit = this.translate("TOTALDAY_UNIT", {"apower": Math.round(this.shellyData.total*100)/100})
 			var totalcsstype = "consumption"
 		}
 
